@@ -23,7 +23,7 @@
   "packages": {
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
-      "version": ">=1.40803.0,<1.40805.0",
+      "version": "~1.140201.0",
       "owner": "platformio"
     },
     "framework-wm60x-sdk": {
@@ -35,8 +35,8 @@
     "framework-arduino-w60x": {
       "type": "framework",
       "optional": true,
-      "version": "~1.207.0",
-      "owner": "maxgerhardt"
+      "version": "~1.300.0",
+      "owner": "sammothxc"
     },
     "tool-openocd-w60x": {
       "type": "uploader",

@@ -15,7 +15,7 @@
 """
 W60X SDK
 """
-from os.path import isfile, isdir, join
+from os.path import isdir, join
 
 from SCons.Script import DefaultEnvironment
 
@@ -23,8 +23,9 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduino-w60x")
-assert isdir(FRAMEWORK_DIR)
+# FRAMEWORK_DIR = platform.get_package_dir("framework-arduino-w60x")
+FRAMEWORK_DIR = "E:/framework-arduino-w60x"
+assert isdir(FRAMEWORK_DIR), "Framework folder not found: {}".format(FRAMEWORK_DIR)
 
 mcu = env.BoardConfig().get("build.mcu", "")
 board_name = env.subst("$BOARD")

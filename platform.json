@@ -34,9 +34,8 @@
     },
     "framework-arduino-w60x": {
       "type": "framework",
-      "optional": true,
-      "version": "~1.300.0",
-      "owner": "sammothxc"
+      "optional": false,
+      "version": "https://github.com/sammothxc/framework-arduino-w60x.git"
     },
     "tool-jlink": {
       "type": "uploader",

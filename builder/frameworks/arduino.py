@@ -74,7 +74,7 @@ env.Append(
     ],
 
     CXXFLAGS=[
-        "-std=gnu++14",
+        "-std=gnu++11",
         "-fno-threadsafe-statics",
         "-fno-rtti",
         "-fno-exceptions",

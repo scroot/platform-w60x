@@ -1,32 +1,55 @@
+> 🚧 Still under construction: more coming soon!
+{.is-warning}
+
 # WinnerMicro W60X: development platform for [PlatformIO](http://platformio.org)
 
-> ⚠️**WORK IN PROGRESS**
+"W600 is an embedded Wi-Fi SoC chip which is complying with IEEE802.11b/g/n international standard and which supports multi interface, multi protocol. It can be easily applied to smart appliances, smart home, health care, smart toy, wireless audio & video, industrial and other IoT fields. This SoC integrates Cortex-M3 CPU, Flash, RF Transceiver, CMOS PA, BaseBand. It applies multi interfaces such as SPI, UART, GPIO, I2C, PWM, I2S, 7816. It applies multi encryption and decryption protocol such as PRNG/SHA1/MD5/RC4/DES/3DES/AES/CRC/RSA."
 
-W600 is an embedded Wi-Fi SoC chip which is complying with IEEE802.11b/g/n international standard and which supports multi interface, multi protocol. It can be easily applied to smart appliances, smart home, health care, smart toy, wireless audio & video, industrial and other IoT fields. This SoC integrates Cortex-M3 CPU, Flash, RF Transceiver, CMOS PA, BaseBand. It applies multi interfaces such as SPI, UART, GPIO, I2C, PWM, I2S, 7816. It applies multi encryption and decryption protocol such as PRNG/SHA1/MD5/RC4/DES/3DES/AES/CRC/RSA.
+I personally own 7 of the [ThingsTurn TB-01 Devkit](https://github.com/sammothxc/w60x-documentation/tree/main/tb-01-devkit-master) boards with the W600 chip.
 
-* [Home](http://platformio.org/platforms/w60x) (home page in PlatformIO Platform Registry) (NOT WORKING)
-* [Documentation](http://docs.platformio.org/page/platforms/w60x.html) (advanced usage, packages, boards, frameworks, etc.) (NOT WORKING)
+## PlatformIO Usage
 
-## Usage
-
-1. [Install PlatformIO](http://platformio.org)
-2. Create PlatformIO project and configure a platform option in [platformio.ini](http://docs.platformio.org/page/projectconf.html) file:
-
-## Stable version
+Put this in your `platformio.ini`
 
 ```ini
-[env:stable]
-platform = w60x
-board = ...
-...
+[platformio]
+; select your default environment here
+default_envs = generic_w600
+
+[env:wio_w600]
+platform = https://github.com/sammothxc/platform-w60x
+board = wio_w600
+framework = arduino ; or wm60x-sdk
+
+[env:wizfi360_evb_mini]
+platform = https://github.com/sammothxc/platform-w60x
+board = wizfi360_evb_mini
+framework = arduino ; or wm60x-sdk
+
+[env:tb_01]
+platform = https://github.com/sammothxc/platform-w60x
+board = tb_01
+framework = arduino ; or wm60x-sdk
+
+[env:generic_w600]
+platform = https://github.com/sammothxc/platform-w60x
+board = generic_w600
+framework = arduino ; or wm60x-sdk
 ```
 
-## Development version
+## Flashing with PlatformIO
 
-```ini
-[env:development]
-platform = https://github.com/maxgerhardt/platform-w60x
-board = ...
-...
-```
+In order for it to accept new firmware from PlatformIO, you have to hold down the `KEY` button (most  likely `PA0` to `GND` on other boards) while powering on. You can release it once the PlatformIO console begins to show progress.
 
+## Datasheets and Other Documentation
+Check out [sammothxc/w60x-documentation](https://github.com/sammothxc/w60x-documentation), [sammothxc/platform-w60x](https://github.com/sammothxc/platform-w60x), and [sammothxc/framework-arduino-w60x](https://github.com/sammothxc/framework-arduino-w60x)
+
+W60x uses Cortex-M3, which needs [toolchain-gccarmnoneeabi](https://registry.platformio.org/tools/platformio/toolchain-gccarmnoneeabi)
+
+[W60x Arduino Framework Documentation](https://documentation.help/Arduino-W60X/index.html)
+
+Most of the hard work was done by [maxgerhardt](https://github.com/maxgerhardt/platform-w60x)!!
+> - https://community.platformio.org/t/w600-pico-support/15516/2
+> - https://github.com/platformio/platformio-core/issues/3639
+> - https://docs.wemos.cc/en/latest/w600/w600_pico.html
+> - https://community.platformio.org/t/custom-platform-and-packages-from-local-folders/20181

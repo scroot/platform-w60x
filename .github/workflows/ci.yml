@@ -54,8 +54,7 @@ jobs:
 
       - name: Install this custom platform
         run: |
-          pio pkg install -p file://.
-          platformio platform install file://.
+          pio pkg install -g -p file://.
 
       - name: Build ${{ matrix.example }}
         run: |

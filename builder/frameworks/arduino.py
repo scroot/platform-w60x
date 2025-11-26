@@ -23,8 +23,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduino-w60x")
-# FRAMEWORK_DIR = "E:/framework-arduino-w60x"
+FRAMEWORK_DIR = platform.get_package_dir("framework-arduinow60x")
 assert isdir(FRAMEWORK_DIR), "Framework folder not found: {}".format(FRAMEWORK_DIR)
 
 mcu = env.BoardConfig().get("build.mcu", "")

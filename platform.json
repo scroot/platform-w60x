@@ -16,7 +16,7 @@
       "script": "builder/frameworks/wm60x_sdk.py"
     },
     "arduino": {
-      "package": "framework-arduino-w60x",
+      "package": "framework-arduinow60x",
       "script": "builder/frameworks/arduino.py"
     }
   },
@@ -32,10 +32,10 @@
       "version": "~1.30400.0",
       "owner": "maxgerhardt"
     },
-    "framework-arduino-w60x": {
+    "framework-arduinow60x": {
       "type": "framework",
       "optional": false,
-      "version": "https://github.com/sammothxc/framework-arduino-w60x.git"
+      "version": "https://github.com/sammothxc/framework-arduinow60x.git"
     },
     "tool-jlink": {
       "type": "uploader",

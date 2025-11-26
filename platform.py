@@ -35,8 +35,8 @@ class W60xPlatform(PlatformBase):
             #self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.50201.0"
             #self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.50401.190816"
             #self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.140201.0"
-            self.frameworks['arduino']['package'] = "framework-arduino-w60x"
-            self.packages['framework-arduino-w60x']['optional'] = False
+            self.frameworks['arduino']['package'] = "framework-arduinow60x"
+            self.packages['framework-arduinow60x']['optional'] = False
 
         default_protocol = self.board_config(variables.get(
             "board")).get("upload.protocol") or ""

@@ -42,7 +42,7 @@ framework = arduino ; or wm60x-sdk
 In order for it to accept new firmware from PlatformIO, you have to hold down the `KEY` button (most  likely `PA0` to `GND` on other boards) while powering on. You can release it once the PlatformIO console begins to show progress.
 
 ## Datasheets and Other Documentation
-Check out [sammothxc/w60x-documentation](https://github.com/sammothxc/w60x-documentation), [sammothxc/platform-w60x](https://github.com/sammothxc/platform-w60x), and [sammothxc/framework-arduino-w60x](https://github.com/sammothxc/framework-arduino-w60x)
+Check out [sammothxc/w60x-documentation](https://github.com/sammothxc/w60x-documentation), [My Project Wiki Page on the W60x](https://wiki.samwarr.dev/en/w60x), and [sammothxc/framework-arduino-w60x](https://github.com/sammothxc/framework-arduino-w60x)
 
 W60x uses Cortex-M3, which needs [toolchain-gccarmnoneeabi](https://registry.platformio.org/tools/platformio/toolchain-gccarmnoneeabi)
 

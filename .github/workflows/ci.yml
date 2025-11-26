@@ -55,4 +55,4 @@ jobs:
 
       - name: Build ${{ matrix.example }}
         run: |
-          platformio run -d ${{ matrix.example }}
+          platformio run -d ${{ matrix.example }} -e all

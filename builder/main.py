@@ -131,7 +131,7 @@ env.Replace(
         "-sb", # secboot 
         join(path_wm_tool, "secboot.img"), # is in same folder as tool
         "-fc",
-        "none",
+        "uncompress",
         #"compress",
         "-it", # image type
         "1M" if is_1mb_version else "2M",

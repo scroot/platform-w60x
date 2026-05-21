@@ -140,7 +140,7 @@ env.Replace(
         "10100" if is_1mb_version else "10100",
         "-df", # generate debug firmware
         "-o", # output,
-        "$BUILD_DIR/wm_w600"
+        "$BUILD_DIR/wm_w600_gz"
     ],
     WM_IMAGE_CMD="$WM_IMAGE_TOOL $WM_IMAGE_TOOL_FLAGS"
 )
@@ -148,7 +148,7 @@ env.Replace(
 imaging_action = env.Alias("imaging", target_firm, env.VerboseAction("$WM_IMAGE_CMD", "Creating images from $SOURCE")) 
 # special case for upload: somehow the uploader doesn't trigger the "AlwaysBuild" options.
 # it still needs to know that if it wants the wm_w600.fls file, it needs to execute the imaging command
-env.Depends(join("$BUILD_DIR", "wm_w600.fls"), imaging_action)
+env.Depends(join("$BUILD_DIR", "wm_w600_gz.fls"), imaging_action)
 # always build during normal build
 AlwaysBuild(imaging_action)
 
@@ -229,7 +229,7 @@ elif upload_protocol == "serial":
         return env.subst("$UPLOAD_PORT")
 
     # created by image target
-    upload_source = join("$BUILD_DIR", "wm_w600.fls")
+    upload_source = join("$BUILD_DIR", "wm_w600_gz.fls")
     env.Replace(
         __configure_upload_port=__configure_upload_port,
         UPLOADER=
